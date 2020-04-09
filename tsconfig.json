@@ -1,20 +1,32 @@
 {
-  "compileOnSave": true,
-  "compilerOptions": {
-    "sourceMap": true,
-    "target": "es2015",
-    "module": "commonjs",
-    "lib": ["es2015"],
-    "declaration": true,
-    "outDir": "./lib",
-    "removeComments": true,
-    "downlevelIteration": true,
-    "strict": true,
-    "newLine": "LF",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "typeRoots": ["node_modules/@types", "typings.d.ts"]
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "src/benchmarks", "src/mockdata", "src/tests"]
+    "compileOnSave": true,
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "es2015",
+        "lib": [
+            "es2015"
+        ],
+        "declaration": true,
+        "outDir": "./lib",
+        "removeComments": true,
+        "downlevelIteration": true,
+        "strict": true,
+        "newLine": "LF",
+        "module": "commonjs",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "typeRoots": [
+            "node_modules/@types",
+            "typings.d.ts"
+        ]
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        "src/benchmarks",
+        "src/mockdata",
+        "src/tests"
+    ]
 }

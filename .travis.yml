@@ -1,4 +1,24 @@
 language: node_js
-node_js:  
-  - "node"
-after_success: cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose
+node_js:
+  - "10"
+
+dist: trusty
+sudo: required
+
+before_script:
+  - npm install -g coveralls
+script:
+  - npm run lint
+  - npm run test
+  - npm run build
+after_success:
+  - npm run coverall
+  - cd lib
+
+deploy:
+  - provider: npm
+    skip_cleanup: true
+    email: $NPM_EMAIL
+    api_key: $NPM_TOKEN
+    on:
+      tags: true

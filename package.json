@@ -1,20 +1,26 @@
 {
-  "name": "netparser",
+  "name": "@dimanoid/netparser",
   "version": "1.7.0",
   "description": "parse and manipulate network addresses",
   "main": "lib/index.js",
   "scripts": {
-    "build": "tsc && jest --coverage",
-    "test": "tsc --noEmit && jest --coverage",
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json",
+    "test": "tsc --noEmit && jest",
+    "test:watch": "tsc --noEmit && jest --watch --notify",
     "prebench": "npm --prefix src/benchmarks install src/benchmarks",
     "bench": "npm run prebench && npm run bench-index && npm run bench-match",
     "bench-index": "ts-node -T src/benchmarks/index.bench.ts",
     "bench-match": "ts-node -T src/benchmarks/match.bench.ts",
-    "bench-sort": "ts-node -T src/benchmarks/sort.bench.ts"
+    "bench-sort": "ts-node -T src/benchmarks/sort.bench.ts",
+    "coverall": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "publish": "npm publish lib --access public",
+    "up": "git diff-index --quiet HEAD -- && cd projects/lib && npm version patch && git add package.json && git commit -m \"version bump [ci skip]\" package.json && cd ../.. && npm version patch",
+    "up:minor": "git diff-index --quiet HEAD -- && cd projects/lib && npm version minor && git add package.json && git commit -m \"version bump [ci skip]\" package.json && cd ../.. && npm version minor"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/demskie/netparser.git"
+    "url": "git+https://github.com/dimanoid/netparser.git"
   },
   "files": [
     "lib/**/*"
@@ -29,11 +35,11 @@
     "address",
     "sort"
   ],
-  "author": "Alex Demskie",
+  "author": "Dmitry Mukhin",
   "license": "MIT",
-  "homepage": "https://github.com/demskie/netparser#readme",
+  "homepage": "https://github.com/dimanoid/netparser#readme",
   "bugs": {
-    "url": "https://github.com/demskie/netparser/issues"
+    "url": "https://github.com/dimanoid/netparser/issues"
   },
   "typings": "lib/index.d.ts",
   "jest": {
@@ -77,22 +83,19 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^24.0.18",
-    "@types/node": "^12.7.4",
-    "@typescript-eslint/eslint-plugin": "^2.1.0",
-    "@typescript-eslint/parser": "^2.1.0",
-    "coveralls": "^3.0.6",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.1",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "coveralls": "^3.0.11",
     "docts": "^0.2.0",
-    "eslint": "^6.3.0",
-    "eslint-config-prettier": "^6.2.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "jest": "^24.9.0",
-    "prettier": "^1.18.2",
-    "ts-jest": "^24.0.2",
-    "ts-node": "^8.3.0",
-    "typedoc": "^0.15.0",
-    "typedoc-plugin-markdown": "^2.1.10",
-    "typescript": "^3.6.2"
+    "jest": "^25.3.0",
+    "ts-jest": "^25.3.1",
+    "ts-node": "^8.8.2",
+    "typedoc": "^0.17.4",
+    "typedoc-plugin-markdown": "^2.2.17",
+    "typescript": "^3.8.3",
+    "tslint": "^6.1.1"
   },
   "dependencies": {}
 }
