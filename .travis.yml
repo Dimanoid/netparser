@@ -13,7 +13,6 @@ script:
   - npm run build
 after_success:
   - npm run coverall
-  - cd lib
 
 deploy:
   - provider: npm
