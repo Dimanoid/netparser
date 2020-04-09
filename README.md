@@ -1,9 +1,9 @@
-# netparser
+# @dimanoid/netparser 
+Forked from https://github.com/demskie/netparser
 
 ## Parse and manipulate IPv4 and IPv6 network addresses
 
-[![Build Status](https://travis-ci.org/demskie/netparser.svg?branch=master)](https://travis-ci.org/demskie/netparser) [![Coverage Status](https://coveralls.io/repos/github/demskie/netparser/badge.svg?branch=master)](https://coveralls.io/github/demskie/netparser?branch=master)
-[![Dependency Status](https://david-dm.org/demskie/netparser/status.svg)](https://david-dm.org/demskie/netparser#info=dependencies&view=table)
+![npm version](https://img.shields.io/npm/v/@dimanoid/netparser/latest) ![bundle size](https://img.shields.io/bundlephobia/min/@dimanoid/netparser) ![build](https://travis-ci.com/Dimanoid/netparser.svg?branch=release) [![Coverage Status](https://coveralls.io/repos/github/Dimanoid/netparser/badge.svg?branch=release)](https://coveralls.io/github/Dimanoid/netparser?branch=release)
 
 ## Installation
 
